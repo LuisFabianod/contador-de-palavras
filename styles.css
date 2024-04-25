@@ -31,4 +31,8 @@ nav{
     justify-content: center;
     width: 100%;
     margin-top: 100px;
+    gap: 10px;
+}
+.pRes{
+    color: white;
 }
