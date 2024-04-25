@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contador de Palavras</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <h1>Contador de palavras</h1>
-    <div class="container">
-        <textarea name="" id="" cols="60" rows="10" class="text"></textarea>
-    </div>
+    <main>
+        <h1>Contador de palavras</h1>
+        <div class="container">
+            <textarea name="" id="" cols="60" rows="10" class="text" placeholder="Digite seu texto aqui"></textarea>
+        </div>
+    </main>
     <nav>
-        <button class="send botao">Enviar</button>
-        <input type="checkbox" class="case-sensitive botao">Maiúsculas e Minúsculas</input>
+        <button class="send botao"><a href="#footer">Enviar</a></button>
+
+        <div class="checkbox">
+
+            <input type="checkbox" class="case-sensitive">    Maiúsculas e Minúsculas</input>
+
+        </div>
+
     </nav>
 
-    <div class="res">
+    <div class="res-wrapper">
+        <div class="res">
 
+        </div>
     </div>
 
-    <footer>
-        
+    <footer id="footer">
+        <p>Site feito por  <a target="_blank" href="https://www.instagram.com/luisfabianocl/">Luis Fabiano</a></p>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
