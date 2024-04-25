@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(32, 32, 32);
+    width: 100%;
+}
+h1{
+    color: white;
+    text-align: center;
+}
+.text{
+    width: 70%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    resize: vertical;
+    padding: 10px;
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+}
