@@ -2,6 +2,7 @@ class ContadorDePalavras {
     constructor() {
         this.textArea = document.querySelector('.text')
         this.botao = document.querySelector('.send')
+        this.divResWrapper = document.querySelector('.resWrapper')
         this.divRes = document.querySelector('.res')
         this.p = document.createElement('p')
         this.p.classList.add('pRes')
@@ -46,6 +47,7 @@ class ContadorDePalavras {
             }
             this.divRes.appendChild(this.p)
             this.divRes.style.display = 'block'
+            this.divResWrapper.style.display = 'flex'
         }
         // CASE UNSENSITIVE
         else if (!this.caseSensitive.checked) {
@@ -72,6 +74,7 @@ class ContadorDePalavras {
             
             this.divRes.appendChild(this.p)
             this.divRes.style.display = 'block'
+            this.divResWrapper.style.display = 'flex'
 
 
         }
