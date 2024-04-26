@@ -15,7 +15,8 @@ class ContadorDePalavras {
             this.valida()
         })
         document.addEventListener('keypress', e => {
-            if(e.key === 13){
+            if(e.key === 'Enter'){
+                e.preventDefault()
                 this.p.innerText = ''
                 this.valida()
             }
