@@ -2,7 +2,7 @@ class ContadorDePalavras {
     constructor() {
         this.textArea = document.querySelector('.text')
         this.botao = document.querySelector('.send')
-        this.divResWrapper = document.querySelector('.resWrapper')
+        this.divResWrapper = document.querySelector('.res-wrapper')
         this.divRes = document.querySelector('.res')
         this.p = document.createElement('p')
         this.p.classList.add('pRes')
