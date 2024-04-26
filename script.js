@@ -45,6 +45,7 @@ class ContadorDePalavras {
                 this.p.innerHTML += (`${palavra}----------${contagem[palavra]} <br>`)
             }
             this.divRes.appendChild(this.p)
+            this.divRes.style.display = 'block'
         }
         // CASE UNSENSITIVE
         else if (!this.caseSensitive.checked) {
