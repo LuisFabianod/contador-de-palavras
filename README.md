@@ -7,4 +7,4 @@ Como o nome sugere, este projeto é um web site que recebe um texto e mostra as 
  - Opção de habilitar o case sensitive
 
 
-[Link para o site](contapalavras.vercel.app)
+[Link para o site](https://contapalavras.vercel.app)
