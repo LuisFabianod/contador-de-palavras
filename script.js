@@ -14,6 +14,12 @@ class ContadorDePalavras {
             this.p.innerText = ''
             this.valida()
         })
+        document.addEventListener('keypress', e => {
+            if(e.key === 13){
+                this.p.innerText = ''
+                this.valida()
+            }
+        })
 
     }
 
