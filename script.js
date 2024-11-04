@@ -4,20 +4,19 @@ class ContadorDePalavras {
         this.botao = document.querySelector('.send')
         this.divResWrapper = document.querySelector('.res-wrapper')
         this.divRes = document.querySelector('.res')
-        this.p = document.createElement('p')
-        this.p.classList.add('pRes')
         this.caseSensitive = document.querySelector('.case-sensitive')
         this.palavrasValidasMaiusculas = []
         this.palavrasUnicasMaiusculas = []
+
         this.botao.addEventListener('click', (el) => {
             el.preventDefault()
-            this.p.innerText = ''
+            this.divRes.innerHTML = ''
             this.valida()
         })
         document.addEventListener('keypress', e => {
             if(e.key === 'Enter'){
                 e.preventDefault()
-                this.p.innerText = ''
+                this.divRes.innerHTML = ''
                 this.valida()
             }
         })
@@ -50,40 +49,56 @@ class ContadorDePalavras {
                 return acc;
             }, {});
             for (let palavra of this.palavrasUnicas) {
-                this.p.innerHTML += (`${palavra}----------${contagem[palavra]} <br>`)
+                const pRes = document.createElement('div')
+                pRes.classList.add('pRes')
+
+                const pPalavra = document.createElement('p')
+                const pContagem = document.createElement('p')
+                const hr = document.createElement('hr')
+
+                pPalavra.innerText = `${palavra} `
+                pContagem.innerText = `${contagem[palavra]}`
+                
+                pRes.appendChild(pPalavra)
+                pRes.appendChild(hr)
+                pRes.appendChild(pContagem)
+
+                this.divRes.appendChild(pRes)   
             }
-            this.divRes.appendChild(this.p)
-            this.divRes.style.display = 'block'
+            this.divRes.style.display = 'flex'
             this.divResWrapper.style.display = 'flex'
         }
         // CASE UNSENSITIVE
-        else if (!this.caseSensitive.checked) {
-
+        else{
             this.palavrasValidasMaiusculas = this.palavrasValidas.map(palavra => palavra.toUpperCase())
-
-            this.palavrasUnicasMaiusculas = Array.from(new Set(this.palavrasUnicas.map(palavra => palavra.toUpperCase())));
+            this.palavrasUnicasMaiusculas = this.palavrasValidasMaiusculas.filter((palavra, index, array) => {
+                return array.indexOf(palavra) === index;
+            });
 
             const contagem = this.palavrasValidasMaiusculas.reduce((acc, valor) => {
                 acc[valor] = (acc[valor] || 0) + 1;
                 return acc;
             }, {});
 
-
-            console.log(this.palavrasUnicasMaiusculas)
-
             for (let palavra of this.palavrasUnicasMaiusculas) {
-                this.p.innerHTML += `${palavra}        ${contagem[palavra]} <br>`;
+                const pRes = document.createElement('div')
+                pRes.classList.add('pRes')
+
+                const pPalavra = document.createElement('p')
+                const pContagem = document.createElement('p')
+                const hr = document.createElement('hr')
+
+                pPalavra.innerText = `${palavra} `
+                pContagem.innerText = `${contagem[palavra]}`
                 
-            
-        
+                pRes.appendChild(pPalavra)
+                pRes.appendChild(hr)
+                pRes.appendChild(pContagem)
+
+                this.divRes.appendChild(pRes)
             }
-            
-            
-            this.divRes.appendChild(this.p)
-            this.divRes.style.display = 'block'
+            this.divRes.style.display = 'flex'
             this.divResWrapper.style.display = 'flex'
-
-
         }
     }
 

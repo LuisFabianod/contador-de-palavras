@@ -86,7 +86,9 @@ nav{
     height: fit-content;
 }
 .res{
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     width: 90%;
     height: 882px;
     max-width: 700px;
@@ -101,6 +103,32 @@ nav{
     animation: appear 1s;
     overflow: auto;
     
+}
+
+.pRes{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+
+.pRes p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50px;
+    padding: 10px;
+    color: black;
+    background-color: rgb(226, 226, 226);
+    border: 1px solid rgb(156, 156, 156);
+    border-radius: 10px;
+}
+
+.pRes hr {
+    flex-grow: 1; /* Faz o <hr> ocupar o espaço restante horizontalmente */
+    height: 1px;
+    background-color: #ccc; /* Cor do <hr> */
+    border: none;
 }
 
 @keyframes appear {
