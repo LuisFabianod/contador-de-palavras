@@ -33,7 +33,7 @@ class ContadorDePalavras {
 
     preparaParaContagem() {
         this.texto = this.textArea.value
-        this.palavras = this.texto.split(/[ ,\.:!?()@#$*\'\"0123456789]/)
+        this.palavras = this.texto.split(/[ \\/,\.;:!?()[\]{}@#$*\'\"0123456789]/)
         this.palavrasValidas = this.palavras.filter(Boolean)
         this.palavrasUnicas = this.palavrasValidas.filter((palavra, index, array) => {
             return array.indexOf(palavra) === index;
